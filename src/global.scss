@@ -24,3 +24,45 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    html {
+        background: #000000;
+        color: #ffffff;
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.clickable {
+    cursor: pointer;
+    transition-duration: 0.5s;
+    transition: transform 0.5s;
+}
+
+.clickable:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    --ion-background-color: rgba(0, 0, 0, 0.1);
+    transform: scale(1.02);
+    transition: background-color 1s;
+    transition: transform 0.5s;
+}
+
+.selected {
+    --ion-background-color: rgba(0, 0, 0, 0.4);
+}
