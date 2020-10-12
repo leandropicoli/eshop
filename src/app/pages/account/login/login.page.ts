@@ -18,6 +18,20 @@ export class LoginPage implements OnInit {
     private service: DataService,) { }
 
   ngOnInit() {
+    this.form = this.fb.group({
+      username: ['', Validators.compose([
+        Validators.required,
+      ])],
+      password: ['', Validators.compose([
+        Validators.minLength(6),
+        Validators.maxLength(20),
+        Validators.required
+      ])]
+    });
+  }
+
+  toggleHide() {
+    this.hide = !this.hide;
   }
 
 }
