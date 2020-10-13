@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { LoadingController, NavController, ToastController } from '@ionic/angular';
 import { DataService } from 'src/app/data.service';
 import { UserModel } from 'src/app/models/user.model';
+import { SecurityUtil } from 'src/app/utils/security.util';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -41,7 +42,7 @@ export class LoginPage implements OnInit {
       .authenticate(this.form.value)
       .subscribe(
         (res: UserModel) => {
-          //SecurityUtil.set(res);
+          SecurityUtil.set(res);
           loading.dismiss();
           this.navCtrl.navigateRoot('/');
         },
